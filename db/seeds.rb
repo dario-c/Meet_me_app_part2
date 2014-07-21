@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Location.create name:'Beach', city: 'Mallorca', country: 'Spain'
+# Location.create name:'Center', city: 'Madrid', country: 'Spain'
+# Location.create name:'Learn', city: 'Ironhack', country: 'Spain'
+
+Location.create name:'Eat', city: 'Valencia', country: 'Spain'
+Location.create name:'Art', city: 'Barcelona', country: 'Spain'
+Location.create name:'Jokes', city: 'Lepe', country: 'Spain'
+Location.create name:'Dance', city: 'Seville', country: 'Spain'
+Location.create name:'Rocks', city: 'Bilbao', country: 'Spain'
