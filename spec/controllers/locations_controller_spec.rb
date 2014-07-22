@@ -7,7 +7,7 @@ RSpec.describe LocationsController, :type => :controller do
     expect(response).to render_template("index")
   end
 
-  it "renders the show template" do #testing response of URL status = 200 successful
+  it "receives status 200 successful" do #testing response of URL status = 200 successful
   	location = Location.create()
     get :show, id: location.id
     expect(response.status).to eq(200)
@@ -23,6 +23,12 @@ RSpec.describe LocationsController, :type => :controller do
   	location = Location.create(:id => 1)
     get(:show, {'id' => "1"})
     expect(assigns(:location)).to eq location #assigns to instance variable @location in controller
+  end
+
+  it "receives status 404 error - not found" do
+  	location = Location.create(:id => 1)
+    get(:show, {'id' => "100"})
+    expect(response.status).to eq(404)
   end
 
 end
