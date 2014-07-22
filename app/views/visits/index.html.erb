@@ -1,0 +1,13 @@
+<h1>Visits</h1>
+
+<ul>
+	<% @visits.each do |visit| %>
+	<li>
+		<% if visit.location_id.present? %>
+			<%= visit.location_id %> -
+		<% end %>
+		<%= visit.user_name %>
+		</li>
+		<% end %>
+	</ul>
+</ul>

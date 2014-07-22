@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 get 'locations' => 'locations#index'
 get 'locations/:id' => 'locations#show'
 
+get 'locations/:id/visits' => 'visits#index'
+get 'locations/:location_id/visits/:id' => 'visits#show'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
