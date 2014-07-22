@@ -4,9 +4,10 @@
 	<% @visits.each do |visit| %>
 	<li>
 		<% if visit.location_id.present? %>
-			<%= visit.location_id %> -
+		 Visit <%= visit.id %> -
+			Location ID <%= visit.location_id %> -
 		<% end %>
-		<%= visit.user_name %>
+		Username <%= visit.user_name %>
 		</li>
 		<% end %>
 	</ul>
