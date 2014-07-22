@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # get 'contact' => 'home#contact'
 
 get 'locations' => 'locations#index'
+get 'locations/:id' => 'locations#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
