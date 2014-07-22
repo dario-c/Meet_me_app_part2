@@ -9,9 +9,13 @@
 # Location.create name:'Beach', city: 'Mallorca', country: 'Spain'
 # Location.create name:'Center', city: 'Madrid', country: 'Spain'
 # Location.create name:'Learn', city: 'Ironhack', country: 'Spain'
+# Location.create name:'Eat', city: 'Valencia', country: 'Spain'
+# Location.create name:'Art', city: 'Barcelona', country: 'Spain'
+# Location.create name:'Jokes', city: 'Lepe', country: 'Spain'
+# Location.create name:'Dance', city: 'Seville', country: 'Spain'
+# Location.create name:'Rocks', city: 'Bilbao', country: 'Spain'
 
-Location.create name:'Eat', city: 'Valencia', country: 'Spain'
-Location.create name:'Art', city: 'Barcelona', country: 'Spain'
-Location.create name:'Jokes', city: 'Lepe', country: 'Spain'
-Location.create name:'Dance', city: 'Seville', country: 'Spain'
-Location.create name:'Rocks', city: 'Bilbao', country: 'Spain'
+Visit.create location_id: 1, user_name: "Jane", from_date: Date.today, to_date: Date.today+3
+Visit.create location_id: 1, user_name: "Edu", from_date: Date.today, to_date: Date.today+2
+Visit.create location_id: 2, user_name: "Jordi", from_date: Date.today, to_date: Date.today+5
+Visit.create location_id: 3, user_name: "Kristian", from_date: Date.today, to_date: Date.today+1
