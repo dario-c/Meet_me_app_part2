@@ -1,4 +1,5 @@
 class Location < ActiveRecord::Base
+	has_many :visits
 
 	def self.last_created(value)
 		Location.order("created_at DESC").limit(value)
