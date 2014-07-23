@@ -25,4 +25,3 @@ Visit.create location_id: location4.id, user_name: "Oscar", from_date: Date.toda
 # Visit.create location_id: 9, user_name: "Nick", from_date: Date.today, to_date: Date.today+2
 # Visit.create location_id: 5, user_name: "Elena", from_date: Date.today, to_date: Date.today+4
 # Visit.create location_id: 5, user_name: "Kiko", from_date: Date.today, to_date: Date.today+4
-
