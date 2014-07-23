@@ -25,7 +25,7 @@ class VisitsController < ApplicationController
 		if @visit.save
 			redirect_to action: 'index', controller: 'visits', location_id: @location.id
 		else
-			@errors = @visit.errors.full_messages   
+			@errors = @visit.errors.full_messages
 			render 'new'
 		end
 	end

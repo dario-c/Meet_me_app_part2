@@ -1,4 +1,11 @@
 <h1>Visit</h1>
-Visit <%= @visit.id %><br>
-Location <%= @visit.location_id %><br>
-<%= @visit.user_name %>
+Visit <%= @visit.id %> - Location <%= @visit.location_id %><br>
+Visited by: <%= @visit.user_name %>
+<br>
+<button>
+<%= link_to "Go back to Visits", location_visits_path(@visit.location_id) %>
+</button>
+
+<button>
+<%= link_to "Go back to Location", location_path(@visit.location_id) %>
+</button>

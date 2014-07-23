@@ -4,9 +4,16 @@
 	<% @locations.each do |location| %>
 	<li>
 		<% if location.name.present? %>
-			<%= location.name %> -
+			<%= location.name %> - 
 		<% end %>
 		<%= location.city %>
+		<button>
+			<%= link_to "See Visits", location_visits_path(location.id) %>
+		</button>
+		<button>
+	<%= link_to "Check-out Location", location_path(location.id)%>
+</button>
+
 		</li>
 		<% end %>
 	</ul>

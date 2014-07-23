@@ -8,7 +8,16 @@
 			Location ID <%= visit.location_id %> -
 		<% end %>
 		Username <%= visit.user_name %>
+		<button>
+		<%= link_to "Go to visit", location_visit_path(:id => visit.id)%>
+	</button>
+
 		</li>
 		<% end %>
 	</ul>
-</ul>
+
+<button>
+<%= link_to "Back to Locations", locations_path %>
+</button>
+
+

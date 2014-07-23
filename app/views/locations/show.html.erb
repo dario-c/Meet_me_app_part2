@@ -1,2 +1,13 @@
-<h1>Locations</h1>
-<%= @location.id %>
+<h1>Location <%= @location.id %></h1>
+<%= @location.name %>:
+<%= @location.city %>, <%= @location.country%>
+<br/>
+<br/>
+<button>
+	<%= link_to "See Visits", location_visits_path(@location.id) %>
+</button>
+
+<button>
+	<%= link_to "Back to Locations List", locations_path%>
+</button>
+
