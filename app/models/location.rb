@@ -1,6 +1,10 @@
 class Location < ActiveRecord::Base
 	has_many :visits
 
+	validates :name, presence: true, length: {maximum: 30}
+	validates :name, format: {with: /\A[a-zA-Z]+\z/} #alphanumeric regex
+	validates :city, presence: true
+
 	def self.last_created(value)
 		Location.order("created_at DESC").limit(value)
 	end
