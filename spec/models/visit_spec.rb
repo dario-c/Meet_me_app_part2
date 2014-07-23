@@ -17,4 +17,14 @@ RSpec.describe Visit, :type => :model do
 		expect(item.valid?).to eq(false)
 	end
 
+	it "from_date should be in the future" do
+		visit = Visit.create location_id: 1, user_name: "Jane", from_date: Date.today-2, to_date: Date.today+3
+		expect(visit.errors[:from_date]).to eq(["Please change your visit date, it should be in the future"])
+	end
+
+	it "to_date should be after from_date" do
+		visit = Visit.create location_id: 1, user_name: "Jane", from_date: Date.today, to_date: Date.today-3
+		expect(visit.errors[:to_date]).to eq(["Please change your visit end date, it should be in after its beginning"])
+	end
+
 end
