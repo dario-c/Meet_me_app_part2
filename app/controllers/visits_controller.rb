@@ -1,8 +1,8 @@
 class VisitsController < ApplicationController
 
 	def index
-		@location = Location.find(params[:id])
-		@visits = Visit.month_visits(8, 2014, params[:id])
+		@location = Location.find(params[:location_id])
+		@visits = Visit.month_visits(7, 2014, params[:location_id])
 	end
 
 	def show
@@ -13,4 +13,28 @@ class VisitsController < ApplicationController
 		render plain: 'Sorry, not found', status: 404
 	end
 
+	def new
+		@location = Location.find(params[:location_id])
+		@visit = Visit.new
+	end
+
+	def create
+		@location = Location.find(params[:location_id])
+		@visit = @location.visits.new visit_params
+		@visit.save
+		if @visit.save
+			redirect_to action: 'index', controller: 'visits', location_id: @location.id
+		else
+			render 'new'
+		end
+	end
+
+	private
+
+	def visit_params
+		params.require(:visit).permit(:user_name, :from_date, :to_date)
+	end
+
 end
+
+

@@ -5,15 +5,20 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  # root 'home#welcome'
+  root 'home#welcome'
   # get 'home' => 'home#welcome'  #means go to /home path and launch welcome view
   # get 'contact' => 'home#contact'
 
-get 'locations' => 'locations#index'
-get 'locations/:id' => 'locations#show'
+resources :locations do
+  resources :visits
+end
 
-get 'locations/:id/visits' => 'visits#index'
-get 'locations/:location_id/visits/:id' => 'visits#show'
+# get 'locations' => 'locations#index'
+# get 'locations/:id' => 'locations#show'
+
+# get 'locations/:id/visits' => 'visits#index'
+# get 'locations/:id/visits/new' => 'visits#new'
+# get 'locations/:location_id/visits/:id' => 'visits#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -10,4 +10,5 @@ class LocationsController < ApplicationController
 	rescue ActiveRecord::RecordNotFound
 		render plain: 'Sorry, not found', status: 404 unless @location
 	end
+
 end
