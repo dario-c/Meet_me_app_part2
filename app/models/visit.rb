@@ -19,7 +19,7 @@ class Visit < ActiveRecord::Base
 		if from_date == nil
 			return
 		elsif Date.today > from_date
-			errors.add(:from_date, "Please change your visit date, it should be in the future")
+			errors.add(:from_date, "should be in the future")
 		end
 	end
 
@@ -27,12 +27,8 @@ class Visit < ActiveRecord::Base
 		if from_date == nil
 			return
 		elsif from_date > to_date
-			errors.add(:to_date, "Please change your visit end date, it should be in after its beginning")
+			errors.add(:to_date, "should be after its beginning")
 		end
 	end
 
 end
-
-
-# def from_date_before_to_date
-# end
