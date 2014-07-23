@@ -27,4 +27,21 @@ RSpec.describe Location, :type => :model do
 		expect(Location.count_visits(8,2014,location1.id)).to eq(1)
 	end
 
+	it "Name and city is present" do
+		item = Location.new
+		expect(item.valid?).to eq(false)
+	end
+
+	it "Name length should not be more than 30 character" do
+		item = Location.new
+		item.name = "DarioJaneHeatherDeeCavanillasIglesiasTamarloDeLaRosaBrunette"
+		expect(item.valid?).to eq(false)
+	end
+
+	it "Name should only include alphanumeric characters" do
+		item = Location.new
+		item.name = "DarioJaneHeatherDee-*&^%$"
+		expect(item.valid?).to eq(false)
+	end
+
 end
