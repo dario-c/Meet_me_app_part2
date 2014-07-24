@@ -32,7 +32,7 @@ RSpec.describe VisitsController, :type => :controller do
   it "receives status 404 error - not found" do
     location = Location.create(:name => "Beach", :city => "Barcelona")
   	visit = Visit.create(location_id: location.id, user_name: "Jane", from_date: Date.today, to_date: Date.today+5)
-    get :show, {'location_id' => location.id, 'id' => 100}
+    get :show, {'location_id' => location.id, 'id' => 10000}
     expect(response.status).to eq(404)
   end
 
