@@ -1,6 +1,6 @@
 class Remove < ActiveRecord::Migration
   def change
 
-  	remove_column :visits, :user_name #remove user_name from visits table
+  	remove_column :visits, :user_id #remove user_id from visits table
   end
 end

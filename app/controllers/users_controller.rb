@@ -4,4 +4,8 @@ class UsersController < ApplicationController
 		@all_users = User.all
 	end
 
+	def show
+		
+	end
+
 end

@@ -1,6 +1,6 @@
 <h1>Visit</h1>
 Visit <%= @visit.id %> - Location <%= @visit.location_id %><br>
-Visited by: <%= @visit.user_name %>
+Visited by: <%= @this_user.user_firstname + " " + @this_user.user_lastname %>
 <br>
 
 <button>
