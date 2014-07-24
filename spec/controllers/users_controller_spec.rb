@@ -33,6 +33,10 @@ RSpec.describe UsersController, :type => :controller do
 		 	expect(response).to render_template("show")
 		end	
 
+		it "Shows a User" do
+			get(:show, {id: @user.id})
+			expect(assigns(:user)).to eq(User.find(@user.id))
+		end
 #   get(:show, {'id' => "1"})
 	end
 

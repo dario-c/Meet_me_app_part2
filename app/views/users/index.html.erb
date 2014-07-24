@@ -3,8 +3,12 @@
 
 <ul>
 <% @all_users.each do|user| %>
+
 <li>
-<%= user.user_lastname %>
+
+<%= link_to user.user_lastname, user_path(user.id) %>
+
 </li>
+
 <% end %>
 </ul>
