@@ -7,21 +7,26 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@locations = @user.visits.pluck(:location_id)
-
-
-
-
-
-
-=begin
-
-			location_ids = Visit.where(user_id: @user.id).pluck(:location_id))
-@his_locations = Location.where("id IN ?", location_ids)
-
-=end
-
 	end
 
+	def new
+		@user = User.new
+	end
+
+	def create
+		@visit = User.new user_params
+		@visit.save
+
+		if @visit.save
+			redirect_to action: 'index', controller: 'users'
+		else
+			render 'new'
+		end
+	end
+
+	private
+
+	def user_params
+		params.require(:user).permit(:user_firstname,:user_lastname)
+	end
 end
-
-

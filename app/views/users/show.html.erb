@@ -1,19 +1,29 @@
-<h1>Behold the User!!!</h1>
+
 
 <article>
+
+<div class="page-header">
+	
+  <h1> <%= @user.user_firstname + " "+ @user.user_lastname%> <small> user page</small></h1>
+  
+</div>
+
+
 <div class='user'>
 	<p>
-	<%= @user.user_firstname + " "+ @user.user_lastname%>
+	
 	</p>
 </div>
 <div class='info'>
 
-	<ul>
+	<ul class="list-group">
 		<% @locations.each do |visits| %>
-			<li>
 
-			<%=	link_to(Location.find(visits).name, location_path(@user))%>
-			</li>
+  			<li class="list-group-item">
+  			
+  					<%=	link_to(Location.find(visits).name, location_path(@user))%>
+  				
+  			</li>
 
 		<% end %>
 	</ul>

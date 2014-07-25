@@ -14,13 +14,11 @@
  *= require_self
  */
 
+.list-group-item:hover { background: gold; }
 
-article {border: 1px solid grey;
-	padding: 10px
-	}
+.page-header { background: gold;
+				padding: 10px; 
+				border-bottom: 20px solid black}
 
-.user {border-bottom: 1px solid grey}
-
-
-
-
+.container { color: red;
+			margin-bottom: 1px }

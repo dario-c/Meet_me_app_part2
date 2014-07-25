@@ -43,6 +43,16 @@ RSpec.describe UsersController, :type => :controller do
 			expect(assigns(:user)).to eq(User.find(@user.id))
 		end
 
+		it "Has a status 200" do
+			get(:new, {id: @user.id}) 
+			expect(response.status).to eq(200)
+		end
+
+		it "renders the New Page" do
+		 	get :new
+		 	expect(response).to render_template("new")
+		end
+
 	end
 
 end
