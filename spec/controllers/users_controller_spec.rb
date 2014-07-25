@@ -37,7 +37,12 @@ RSpec.describe UsersController, :type => :controller do
 			get(:show, {id: @user.id})
 			expect(assigns(:user)).to eq(User.find(@user.id))
 		end
-#   get(:show, {'id' => "1"})
+
+		it "Shows all the visits the selected user did" do
+			get(:show, {id: @user.id})
+			expect(assigns(:user)).to eq(User.find(@user.id))
+		end
+
 	end
 
 end

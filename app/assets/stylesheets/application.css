@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+
+article {border: 1px solid grey;
+	padding: 10px
+	}
+
+.user {border-bottom: 1px solid grey}
+
+
+
+

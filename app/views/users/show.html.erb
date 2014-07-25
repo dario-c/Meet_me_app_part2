@@ -1,6 +1,22 @@
 <h1>Behold the User!!!</h1>
 
+<article>
+<div class='user'>
+	<p>
+	<%= @user.user_firstname + " "+ @user.user_lastname%>
+	</p>
+</div>
+<div class='info'>
 
-<p>
-<%= @user.user_firstname + " "+ @user.user_lastname%>
-</p>
+	<ul>
+		<% @locations.each do |visits| %>
+			<li>
+
+			<%=	link_to(Location.find(visits).name, location_path(@user))%>
+			</li>
+
+		<% end %>
+	</ul>
+
+</div>
+</article>
