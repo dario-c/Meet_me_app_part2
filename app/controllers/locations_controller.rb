@@ -2,6 +2,7 @@ class LocationsController < ApplicationController
 
 	def index
 		# @locations = Location.last_created(7)
+		@search = Search.new
 		@locations = Location.in_spain?
 	end
 

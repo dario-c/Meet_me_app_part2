@@ -18,3 +18,17 @@
 		<% end %>
 	</ul>
 </ul>
+
+
+
+<%= form_for Search.new do |f| %>
+<%= f.label "Find..." %>
+<%= f.text_field :keyword%>
+<br/>
+<%= f.submit "Save"%>
+<% end %>
+ 
+
+
+
+

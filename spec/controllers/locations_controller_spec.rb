@@ -7,6 +7,7 @@ RSpec.describe LocationsController, :type => :controller do
     expect(response).to render_template("index")
   end
 
+
   it "receives status 200 successful" do #testing response of URL status = 200 successful
   	location = Location.create(:id => 1, :name => "Beach", :city => "Barcelona")
     get :show, id: location.id

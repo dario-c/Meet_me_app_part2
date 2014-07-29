@@ -14,6 +14,7 @@ resources :locations do
 end
 
 resources :users
+resource :search, only: :create
 
 # get 'locations' => 'locations#index'
 # get 'locations/:id' => 'locations#show'
