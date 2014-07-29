@@ -28,6 +28,24 @@ class LocationsController < ApplicationController
 		end
 	end
 
+
+
+
+
+	def edit
+		@location = Location.find(params['id'])
+	
+			@location.comments.build
+	
+
+	end
+
+
+	def update
+
+	end
+
+
 	private
 	def location_params
 		params.require(:location).permit(:name, :city, :country, comments_attributes: [:id, :text])

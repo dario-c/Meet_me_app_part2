@@ -2,6 +2,11 @@
 <%= @location.name %>:
 <%= @location.city %>, <%= @location.country%>
 <br/>
+
+<% @location.comments.each do |comment| %>
+<%= comment.text %>
+<% end %>
+
 <br/>
 <button>
 	<%= link_to "See Visits", location_visits_path(@location.id) %>
