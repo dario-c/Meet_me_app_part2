@@ -28,27 +28,22 @@ class LocationsController < ApplicationController
 		end
 	end
 
-
-
-
-
 	def edit
 		@location = Location.find(params['id'])
-	
-			@location.comments.build
-	
-
+		@location.comments.build
 	end
 
 
 	def update
-
+		@location = Location.find(params['id'])
+		@location.update_attributes location_params
+		redirect_to action: 'show', controller: 'locations', id: @location.id
 	end
 
 
 	private
 	def location_params
-		params.require(:location).permit(:name, :city, :country, comments_attributes: [:id, :text])
+		params.require(:location).permit(:name, :city, :country, comments_attributes: [:id, :text, :_destroy])
 	end
 
 end

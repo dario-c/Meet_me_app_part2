@@ -14,12 +14,19 @@
   <%= f.text_field :city %> <br/>
   <%= f.label :country %>
   <%= f.text_field :country %> <br/>
-  <ul>
-    <%= f.fields_for :comments do |comment_form| %>
-          <%= comment_form.hidden_field :id %> 
-          <li> <%= comment_form.label :text %> </li>
-          <li> <%= comment_form.text_field :text %> </li>
-    <% end %>
-  </ul>
+ 
+  <%= f.fields_for :comments do |comment_form| %>
+     <ul>   
+        <%= comment_form.hidden_field :id %> 
+        <li> <%= comment_form.label :text %> </li>
+        <li> <%= comment_form.text_field :text %> </li>
+          
+          <% unless comment_form.object.id == nil%>
+            <%= comment_form.label "Delete!" %>
+            <%= comment_form.check_box :_destroy %>
+          <% end %>
+      </ul>         
+  <% end %>
+ 
   <%= f.submit "Save" %>
 <% end %>

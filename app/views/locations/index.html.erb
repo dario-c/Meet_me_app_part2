@@ -2,7 +2,7 @@
 
 <ul>
 	<% @locations.each do |location| %>
-	<li>
+	<li class="<%= cycle("odd","even") %>">
 		<% if location.name.present? %>
 			<%= location.name %> - 
 		<% end %>
