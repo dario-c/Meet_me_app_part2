@@ -19,8 +19,6 @@
 	</ul>
 </ul>
 
-
-
 <%= form_for Search.new do |f| %>
 <%= f.label "Find..." %>
 <%= f.text_field :keyword%>
@@ -29,6 +27,8 @@
 <% end %>
  
 
-
+<% content_for(:title) do %>
+	Locations
+<% end %>
 
 

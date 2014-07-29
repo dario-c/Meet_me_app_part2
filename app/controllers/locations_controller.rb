@@ -9,7 +9,10 @@ class LocationsController < ApplicationController
 	def show
 		@location = Location.find(params[:id])
 	rescue ActiveRecord::RecordNotFound
-		render plain: 'Sorry, we did not find anything!', status: 404 unless @location
+		redirect_to 'http://localhost:3000/404', status: 404 unless @location
+	
+		#render plain: 'Sorry, we did not find anything!'
+
 	end
 
 	def new

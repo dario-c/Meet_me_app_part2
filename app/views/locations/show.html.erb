@@ -17,3 +17,6 @@
 	<%= link_to "Back to Locations List", locations_path%>
 </button>
 
+<% content_for(:title) do %>
+  <%= @location.name %>
+<% end %>
