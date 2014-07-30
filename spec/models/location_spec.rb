@@ -44,4 +44,14 @@ RSpec.describe Location, :type => :model do
 		expect(item.valid?).to eq(false)
 	end
 
+	it "Validates a Facotory" do
+		expect(FactoryGirl.build(:location)).to be_valid
+		
+	end
+
+	it "Doesnt validate an invalid factory" do
+	expect(FactoryGirl.build(:location, :name => 'Disney Land!')).to be_invalid
+	
+	end
+
 end
