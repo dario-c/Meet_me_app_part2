@@ -1,7 +1,37 @@
 require 'rails_helper'
 
+theuser = FactoryGirl.create(:user)
+
+
 RSpec.describe UsersController, :type => :controller do
 
+	context "Using FactoryGirl" do
+
+		it "Renders the Index" do
+			get :index
+
+			expect(request).to render_template(:index)			
+		end
+
+		it "Creates a User" do
+			#post :create, FactoryGirl.attributes_for(:user)
+
+			expect{ post :create, user:FactoryGirl.attributes_for(:user) }.to change(User,:count)
+
+		end
+
+		it "Updates a User" do 
+
+			expect{ put :update, id: theuser.id, user_lastname: "Patrivk"  }.to change(theuser, :user_lastname )
+
+
+			
+		end
+
+
+	end
+
+		
 	context "Renders..." do
 
 		before(:each) do

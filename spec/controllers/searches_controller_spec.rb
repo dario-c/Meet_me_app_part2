@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe SearchesController, :type => :controller do
+=begin
 
 
   it "receives status 200 successful" do 
@@ -23,6 +24,7 @@ RSpec.describe SearchesController, :type => :controller do
 
 
 
+=end
 
 end
 
