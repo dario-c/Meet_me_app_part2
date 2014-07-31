@@ -1,3 +1,10 @@
 <h1>Welcome to Meet Me!</h1>
 
-<b>Place to tell your friends where they can meet you!</b>
+<p><b>THE place to tell your friends where they can meet you!</b></p>
+
+<% if user_signed_in?  %>
+  <p>Welcome, <%= current_user.user_firstname %></p>
+<% else %>
+  <p>Sign in to add locations and visits</p>
+<% end %>
+
