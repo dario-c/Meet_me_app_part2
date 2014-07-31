@@ -7,7 +7,7 @@ class VisitsController < ApplicationController
 		@user_name = {}
 		@visits.each do |visit|
 			@user_name[visit.id] = User.find(visit.user_id).user_firstname + ' ' + User.find(visit.user_id).user_lastname
-		end 
+		end
 	end
 
 	def show
@@ -31,7 +31,7 @@ class VisitsController < ApplicationController
 		flash[:notice] = "Updated!"
 		redirect_to action: 'index', controller: 'visits', location_id:@location
 	end
-#	
+#
 #
 	def new
 		@location = Location.find(params[:location_id])

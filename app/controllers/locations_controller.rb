@@ -10,14 +10,17 @@ class LocationsController < ApplicationController
 		@location = Location.find(params[:id])
 	rescue ActiveRecord::RecordNotFound
 		redirect_to 'http://localhost:3000/404', status: 404 unless @location
-	
 		#render plain: 'Sorry, we did not find anything!'
 
 	end
 
 	def new
+	 if user_signed_in?
 		@location = Location.new
 		@location.comments.build
+		else
+			redirect_to new_user_session_path
+		end
 	end
 
 	def create
