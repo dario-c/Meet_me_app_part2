@@ -15,9 +15,9 @@ class LocationsController < ApplicationController
 	end
 
 	def new
-	 if user_signed_in?
-		@location = Location.new
-		@location.comments.build
+		if user_signed_in?
+			@location = Location.new
+			@location.comments.build
 		else
 			redirect_to new_user_session_path
 		end
@@ -49,7 +49,7 @@ class LocationsController < ApplicationController
 
 	private
 	def location_params
-		params.require(:location).permit(:name, :city, :country, comments_attributes: [:id, :text, :_destroy])
+		params.require(:location).permit(:name, :city, :country, comments_attributes: [:id, :text, :_destroy], users_attributes: [:id])
 	end
 
 end

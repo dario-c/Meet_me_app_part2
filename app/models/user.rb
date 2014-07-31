@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :rememberable, :trackable, :validatable
 	has_many :visits
+  has_many :locations
 
 
   #validates :user_firstname, presence: true, length: {maximum: 30}

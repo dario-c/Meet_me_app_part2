@@ -57,7 +57,7 @@ class VisitsController < ApplicationController
 		@visit.destroy
 		redirect_to action: 'index', controller: 'visits', location_id: @location.id
 	end
-		
+
 	private
 
 	def visit_params
