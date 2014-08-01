@@ -8,6 +8,14 @@ class LocationsController < ApplicationController
 
 	def show
 		@location = Location.find(params[:id])
+	
+	#	respond_to do|format|
+	#		format.html
+	#		format.json{ render :json => @location.to_json }
+	#	end	
+
+
+
 	rescue ActiveRecord::RecordNotFound
 		redirect_to 'http://localhost:3000/404', status: 404 unless @location
 		#render plain: 'Sorry, we did not find anything!'
@@ -26,11 +34,18 @@ class LocationsController < ApplicationController
 	def create
 
 		@location = Location.new location_params
-		@location.user_id = current_user.id 
+		@location.user_id = 3#current_user.id 
 		@location.save
 
+	
+
 		if @location.save
-			redirect_to action: 'index', controller: 'locations'
+
+			respond_to do |format|
+				format.html{redirect_to action: 'index', controller: 'locations'}
+				format.json {render'show'}
+			end
+
 		else
 			render 'new'
 		end
